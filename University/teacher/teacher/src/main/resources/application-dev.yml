@@ -1,5 +1,5 @@
 server:
-  port: 8093
+  port: 8094
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -8,7 +8,7 @@ spring:
     password: admin123
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
     show-sql: true
     database: mysql
     database-platform: org.hibernate.dialect.MySQL8Dialect  
