@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.university.school.DTO.FullSchoolResponse;
+import com.university.school.DTO.FullSchoolTeacherResponse;
 import com.university.school.Entity.School;
 import com.university.school.Service.SchoolService;
 
@@ -48,5 +49,10 @@ public class SchoolController {
     @GetMapping("/with-students/{school-id}")
     public ResponseEntity<FullSchoolResponse> findAllStudentsBySchoolId(@PathVariable("school-id") Integer schoolId) {
         return ResponseEntity.ok(schoolService.findSchoolsWithStudents(schoolId));
+    }
+
+    @GetMapping("/with-teachers/{schoolId}")
+    public ResponseEntity<FullSchoolTeacherResponse> findAllTeachersBySchoolId(@PathVariable("schoolId") Integer schoolId){
+       return ResponseEntity.ok(schoolService.findSchoolWithTeacher(schoolId));
     }
 }
